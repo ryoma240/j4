@@ -1,0 +1,1068 @@
+us XQueryBestTile(
+    Display*		/* display */,
+    Drawable		/* which_screen */,
+    unsigned int	/* width */,
+    unsigned int	/* height */,
+    unsigned int*	/* width_return */,
+    unsigned int*	/* height_return */
+);
+
+extern int XQueryColor(
+    Display*		/* display */,
+    Colormap		/* colormap */,
+    XColor*		/* def_in_out */
+);
+
+extern int XQueryColors(
+    Display*		/* display */,
+    Colormap		/* colormap */,
+    XColor*		/* defs_in_out */,
+    int			/* ncolors */
+);
+
+extern Bool XQueryExtension(
+    Display*		/* display */,
+    _Xconst char*	/* name */,
+    int*		/* major_opcode_return */,
+    int*		/* first_event_return */,
+    int*		/* first_error_return */
+);
+
+extern int XQueryKeymap(
+    Display*		/* display */,
+    char [32]		/* keys_return */
+);
+
+extern Bool XQueryPointer(
+    Display*		/* display */,
+    Window		/* w */,
+    Window*		/* root_return */,
+    Window*		/* child_return */,
+    int*		/* root_x_return */,
+    int*		/* root_y_return */,
+    int*		/* win_x_return */,
+    int*		/* win_y_return */,
+    unsigned int*       /* mask_return */
+);
+
+extern int XQueryTextExtents(
+    Display*		/* display */,
+    XID			/* font_ID */,
+    _Xconst char*	/* string */,
+    int			/* nchars */,
+    int*		/* direction_return */,
+    int*		/* font_ascent_return */,
+    int*		/* font_descent_return */,
+    XCharStruct*	/* overall_return */
+);
+
+extern int XQueryTextExtents16(
+    Display*		/* display */,
+    XID			/* font_ID */,
+    _Xconst XChar2b*	/* string */,
+    int			/* nchars */,
+    int*		/* direction_return */,
+    int*		/* font_ascent_return */,
+    int*		/* font_descent_return */,
+    XCharStruct*	/* overall_return */
+);
+
+extern Status XQueryTree(
+    Display*		/* display */,
+    Window		/* w */,
+    Window*		/* root_return */,
+    Window*		/* parent_return */,
+    Window**		/* children_return */,
+    unsigned int*	/* nchildren_return */
+);
+
+extern int XRaiseWindow(
+    Display*		/* display */,
+    Window		/* w */
+);
+
+extern int XReadBitmapFile(
+    Display*		/* display */,
+    Drawable 		/* d */,
+    _Xconst char*	/* filename */,
+    unsigned int*	/* width_return */,
+    unsigned int*	/* height_return */,
+    Pixmap*		/* bitmap_return */,
+    int*		/* x_hot_return */,
+    int*		/* y_hot_return */
+);
+
+extern int XReadBitmapFileData(
+    _Xconst char*	/* filename */,
+    unsigned int*	/* width_return */,
+    unsigned int*	/* height_return */,
+    unsigned char**	/* data_return */,
+    int*		/* x_hot_return */,
+    int*		/* y_hot_return */
+);
+
+extern int XRebindKeysym(
+    Display*		/* display */,
+    KeySym		/* keysym */,
+    KeySym*		/* list */,
+    int			/* mod_count */,
+    _Xconst unsigned char*	/* string */,
+    int			/* bytes_string */
+);
+
+extern int XRecolorCursor(
+    Display*		/* display */,
+    Cursor		/* cursor */,
+    XColor*		/* foreground_color */,
+    XColor*		/* background_color */
+);
+
+extern int XRefreshKeyboardMapping(
+    XMappingEvent*	/* event_map */
+);
+
+extern int XRemoveFromSaveSet(
+    Display*		/* display */,
+    Window		/* w */
+);
+
+extern int XRemoveHost(
+    Display*		/* display */,
+    XHostAddress*	/* host */
+);
+
+extern int XRemoveHosts(
+    Display*		/* display */,
+    XHostAddress*	/* hosts */,
+    int			/* num_hosts */
+);
+
+extern int XReparentWindow(
+    Display*		/* display */,
+    Window		/* w */,
+    Window		/* parent */,
+    int			/* x */,
+    int			/* y */
+);
+
+extern int XResetScreenSaver(
+    Display*		/* display */
+);
+
+extern int XResizeWindow(
+    Display*		/* display */,
+    Window		/* w */,
+    unsigned int	/* width */,
+    unsigned int	/* height */
+);
+
+extern int XRestackWindows(
+    Display*		/* display */,
+    Window*		/* windows */,
+    int			/* nwindows */
+);
+
+extern int XRotateBuffers(
+    Display*		/* display */,
+    int			/* rotate */
+);
+
+extern int XRotateWindowProperties(
+    Display*		/* display */,
+    Window		/* w */,
+    Atom*		/* properties */,
+    int			/* num_prop */,
+    int			/* npositions */
+);
+
+extern int XScreenCount(
+    Display*		/* display */
+);
+
+extern int XSelectInput(
+    Display*		/* display */,
+    Window		/* w */,
+    long		/* event_mask */
+);
+
+extern Status XSendEvent(
+    Display*		/* display */,
+    Window		/* w */,
+    Bool		/* propagate */,
+    long		/* event_mask */,
+    XEvent*		/* event_send */
+);
+
+extern int XSetAccessControl(
+    Display*		/* display */,
+    int			/* mode */
+);
+
+extern int XSetArcMode(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* arc_mode */
+);
+
+extern int XSetBackground(
+    Display*		/* display */,
+    GC			/* gc */,
+    unsigned long	/* background */
+);
+
+extern int XSetClipMask(
+    Display*		/* display */,
+    GC			/* gc */,
+    Pixmap		/* pixmap */
+);
+
+extern int XSetClipOrigin(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* clip_x_origin */,
+    int			/* clip_y_origin */
+);
+
+extern int XSetClipRectangles(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* clip_x_origin */,
+    int			/* clip_y_origin */,
+    XRectangle*		/* rectangles */,
+    int			/* n */,
+    int			/* ordering */
+);
+
+extern int XSetCloseDownMode(
+    Display*		/* display */,
+    int			/* close_mode */
+);
+
+extern int XSetCommand(
+    Display*		/* display */,
+    Window		/* w */,
+    char**		/* argv */,
+    int			/* argc */
+);
+
+extern int XSetDashes(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* dash_offset */,
+    _Xconst char*	/* dash_list */,
+    int			/* n */
+);
+
+extern int XSetFillRule(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* fill_rule */
+);
+
+extern int XSetFillStyle(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* fill_style */
+);
+
+extern int XSetFont(
+    Display*		/* display */,
+    GC			/* gc */,
+    Font		/* font */
+);
+
+extern int XSetFontPath(
+    Display*		/* display */,
+    char**		/* directories */,
+    int			/* ndirs */
+);
+
+extern int XSetForeground(
+    Display*		/* display */,
+    GC			/* gc */,
+    unsigned long	/* foreground */
+);
+
+extern int XSetFunction(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* function */
+);
+
+extern int XSetGraphicsExposures(
+    Display*		/* display */,
+    GC			/* gc */,
+    Bool		/* graphics_exposures */
+);
+
+extern int XSetIconName(
+    Display*		/* display */,
+    Window		/* w */,
+    _Xconst char*	/* icon_name */
+);
+
+extern int XSetInputFocus(
+    Display*		/* display */,
+    Window		/* focus */,
+    int			/* revert_to */,
+    Time		/* time */
+);
+
+extern int XSetLineAttributes(
+    Display*		/* display */,
+    GC			/* gc */,
+    unsigned int	/* line_width */,
+    int			/* line_style */,
+    int			/* cap_style */,
+    int			/* join_style */
+);
+
+extern int XSetModifierMapping(
+    Display*		/* display */,
+    XModifierKeymap*	/* modmap */
+);
+
+extern int XSetPlaneMask(
+    Display*		/* display */,
+    GC			/* gc */,
+    unsigned long	/* plane_mask */
+);
+
+extern int XSetPointerMapping(
+    Display*		/* display */,
+    _Xconst unsigned char*	/* map */,
+    int			/* nmap */
+);
+
+extern int XSetScreenSaver(
+    Display*		/* display */,
+    int			/* timeout */,
+    int			/* interval */,
+    int			/* prefer_blanking */,
+    int			/* allow_exposures */
+);
+
+extern int XSetSelectionOwner(
+    Display*		/* display */,
+    Atom	        /* selection */,
+    Window		/* owner */,
+    Time		/* time */
+);
+
+extern int XSetState(
+    Display*		/* display */,
+    GC			/* gc */,
+    unsigned long 	/* foreground */,
+    unsigned long	/* background */,
+    int			/* function */,
+    unsigned long	/* plane_mask */
+);
+
+extern int XSetStipple(
+    Display*		/* display */,
+    GC			/* gc */,
+    Pixmap		/* stipple */
+);
+
+extern int XSetSubwindowMode(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* subwindow_mode */
+);
+
+extern int XSetTSOrigin(
+    Display*		/* display */,
+    GC			/* gc */,
+    int			/* ts_x_origin */,
+    int			/* ts_y_origin */
+);
+
+extern int XSetTile(
+    Display*		/* display */,
+    GC			/* gc */,
+    Pixmap		/* tile */
+);
+
+extern int XSetWindowBackground(
+    Display*		/* display */,
+    Window		/* w */,
+    unsigned long	/* background_pixel */
+);
+
+extern int XSetWindowBackgroundPixmap(
+    Display*		/* display */,
+    Window		/* w */,
+    Pixmap		/* background_pixmap */
+);
+
+extern int XSetWindowBorder(
+    Display*		/* display */,
+    Window		/* w */,
+    unsigned long	/* border_pixel */
+);
+
+extern int XSetWindowBorderPixmap(
+    Display*		/* display */,
+    Window		/* w */,
+    Pixmap		/* border_pixmap */
+);
+
+extern int XSetWindowBorderWidth(
+    Display*		/* display */,
+    Window		/* w */,
+    unsigned int	/* width */
+);
+
+extern int XSetWindowColormap(
+    Display*		/* display */,
+    Window		/* w */,
+    Colormap		/* colormap */
+);
+
+extern int XStoreBuffer(
+    Display*		/* display */,
+    _Xconst char*	/* bytes */,
+    int			/* nbytes */,
+    int			/* buffer */
+);
+
+extern int XStoreBytes(
+    Display*		/* display */,
+    _Xconst char*	/* bytes */,
+    int			/* nbytes */
+);
+
+extern int XStoreColor(
+    Display*		/* display */,
+    Colormap		/* colormap */,
+    XColor*		/* color */
+);
+
+extern int XStoreColors(
+    Display*		/* display */,
+    Colormap		/* colormap */,
+    XColor*		/* color */,
+    int			/* ncolors */
+);
+
+extern int XStoreName(
+    Display*		/* display */,
+    Window		/* w */,
+    _Xconst char*	/* window_name */
+);
+
+extern int XStoreNamedColor(
+    Display*		/* display */,
+    Colormap		/* colormap */,
+    _Xconst char*	/* color */,
+    unsigned long	/* pixel */,
+    int			/* flags */
+);
+
+extern int XSync(
+    Display*		/* display */,
+    Bool		/* discard */
+);
+
+extern int XTextExtents(
+    XFontStruct*	/* font_struct */,
+    _Xconst char*	/* string */,
+    int			/* nchars */,
+    int*		/* direction_return */,
+    int*		/* font_ascent_return */,
+    int*		/* font_descent_return */,
+    XCharStruct*	/* overall_return */
+);
+
+extern int XTextExtents16(
+    XFontStruct*	/* font_struct */,
+    _Xconst XChar2b*	/* string */,
+    int			/* nchars */,
+    int*		/* direction_return */,
+    int*		/* font_ascent_return */,
+    int*		/* font_descent_return */,
+    XCharStruct*	/* overall_return */
+);
+
+extern int XTextWidth(
+    XFontStruct*	/* font_struct */,
+    _Xconst char*	/* string */,
+    int			/* count */
+);
+
+extern int XTextWidth16(
+    XFontStruct*	/* font_struct */,
+    _Xconst XChar2b*	/* string */,
+    int			/* count */
+);
+
+extern Bool XTranslateCoordinates(
+    Display*		/* display */,
+    Window		/* src_w */,
+    Window		/* dest_w */,
+    int			/* src_x */,
+    int			/* src_y */,
+    int*		/* dest_x_return */,
+    int*		/* dest_y_return */,
+    Window*		/* child_return */
+);
+
+extern int XUndefineCursor(
+    Display*		/* display */,
+    Window		/* w */
+);
+
+extern int XUngrabButton(
+    Display*		/* display */,
+    unsigned int	/* button */,
+    unsigned int	/* modifiers */,
+    Window		/* grab_window */
+);
+
+extern int XUngrabKey(
+    Display*		/* display */,
+    int			/* keycode */,
+    unsigned int	/* modifiers */,
+    Window		/* grab_window */
+);
+
+extern int XUngrabKeyboard(
+    Display*		/* display */,
+    Time		/* time */
+);
+
+extern int XUngrabPointer(
+    Display*		/* display */,
+    Time		/* time */
+);
+
+extern int XUngrabServer(
+    Display*		/* display */
+);
+
+extern int XUninstallColormap(
+    Display*		/* display */,
+    Colormap		/* colormap */
+);
+
+extern int XUnloadFont(
+    Display*		/* display */,
+    Font		/* font */
+);
+
+extern int XUnmapSubwindows(
+    Display*		/* display */,
+    Window		/* w */
+);
+
+extern int XUnmapWindow(
+    Display*		/* display */,
+    Window		/* w */
+);
+
+extern int XVendorRelease(
+    Display*		/* display */
+);
+
+extern int XWarpPointer(
+    Display*		/* display */,
+    Window		/* src_w */,
+    Window		/* dest_w */,
+    int			/* src_x */,
+    int			/* src_y */,
+    unsigned int	/* src_width */,
+    unsigned int	/* src_height */,
+    int			/* dest_x */,
+    int			/* dest_y */
+);
+
+extern int XWidthMMOfScreen(
+    Screen*		/* screen */
+);
+
+extern int XWidthOfScreen(
+    Screen*		/* screen */
+);
+
+extern int XWindowEvent(
+    Display*		/* display */,
+    Window		/* w */,
+    long		/* event_mask */,
+    XEvent*		/* event_return */
+);
+
+extern int XWriteBitmapFile(
+    Display*		/* display */,
+    _Xconst char*	/* filename */,
+    Pixmap		/* bitmap */,
+    unsigned int	/* width */,
+    unsigned int	/* height */,
+    int			/* x_hot */,
+    int			/* y_hot */
+);
+
+extern Bool XSupportsLocale (void);
+
+extern char *XSetLocaleModifiers(
+    const char*		/* modifier_list */
+);
+
+extern XOM XOpenOM(
+    Display*			/* display */,
+    struct _XrmHashBucketRec*	/* rdb */,
+    _Xconst char*		/* res_name */,
+    _Xconst char*		/* res_class */
+);
+
+extern Status XCloseOM(
+    XOM			/* om */
+);
+
+extern char *XSetOMValues(
+    XOM			/* om */,
+    ...
+) _X_SENTINEL(0);
+
+extern char *XGetOMValues(
+    XOM			/* om */,
+    ...
+) _X_SENTINEL(0);
+
+extern Display *XDisplayOfOM(
+    XOM			/* om */
+);
+
+extern char *XLocaleOfOM(
+    XOM			/* om */
+);
+
+extern XOC XCreateOC(
+    XOM			/* om */,
+    ...
+) _X_SENTINEL(0);
+
+extern void XDestroyOC(
+    XOC			/* oc */
+);
+
+extern XOM XOMOfOC(
+    XOC			/* oc */
+);
+
+extern char *XSetOCValues(
+    XOC			/* oc */,
+    ...
+) _X_SENTINEL(0);
+
+extern char *XGetOCValues(
+    XOC			/* oc */,
+    ...
+) _X_SENTINEL(0);
+
+extern XFontSet XCreateFontSet(
+    Display*		/* display */,
+    _Xconst char*	/* base_font_name_list */,
+    char***		/* missing_charset_list */,
+    int*		/* missing_charset_count */,
+    char**		/* def_string */
+);
+
+extern void XFreeFontSet(
+    Display*		/* display */,
+    XFontSet		/* font_set */
+);
+
+extern int XFontsOfFontSet(
+    XFontSet		/* font_set */,
+    XFontStruct***	/* font_struct_list */,
+    char***		/* font_name_list */
+);
+
+extern char *XBaseFontNameListOfFontSet(
+    XFontSet		/* font_set */
+);
+
+extern char *XLocaleOfFontSet(
+    XFontSet		/* font_set */
+);
+
+extern Bool XContextDependentDrawing(
+    XFontSet		/* font_set */
+);
+
+extern Bool XDirectionalDependentDrawing(
+    XFontSet		/* font_set */
+);
+
+extern Bool XContextualDrawing(
+    XFontSet		/* font_set */
+);
+
+extern XFontSetExtents *XExtentsOfFontSet(
+    XFontSet		/* font_set */
+);
+
+extern int XmbTextEscapement(
+    XFontSet		/* font_set */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */
+);
+
+extern int XwcTextEscapement(
+    XFontSet		/* font_set */,
+    _Xconst wchar_t*	/* text */,
+    int			/* num_wchars */
+);
+
+extern int Xutf8TextEscapement(
+    XFontSet		/* font_set */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */
+);
+
+extern int XmbTextExtents(
+    XFontSet		/* font_set */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */,
+    XRectangle*		/* overall_ink_return */,
+    XRectangle*		/* overall_logical_return */
+);
+
+extern int XwcTextExtents(
+    XFontSet		/* font_set */,
+    _Xconst wchar_t*	/* text */,
+    int			/* num_wchars */,
+    XRectangle*		/* overall_ink_return */,
+    XRectangle*		/* overall_logical_return */
+);
+
+extern int Xutf8TextExtents(
+    XFontSet		/* font_set */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */,
+    XRectangle*		/* overall_ink_return */,
+    XRectangle*		/* overall_logical_return */
+);
+
+extern Status XmbTextPerCharExtents(
+    XFontSet		/* font_set */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */,
+    XRectangle*		/* ink_extents_buffer */,
+    XRectangle*		/* logical_extents_buffer */,
+    int			/* buffer_size */,
+    int*		/* num_chars */,
+    XRectangle*		/* overall_ink_return */,
+    XRectangle*		/* overall_logical_return */
+);
+
+extern Status XwcTextPerCharExtents(
+    XFontSet		/* font_set */,
+    _Xconst wchar_t*	/* text */,
+    int			/* num_wchars */,
+    XRectangle*		/* ink_extents_buffer */,
+    XRectangle*		/* logical_extents_buffer */,
+    int			/* buffer_size */,
+    int*		/* num_chars */,
+    XRectangle*		/* overall_ink_return */,
+    XRectangle*		/* overall_logical_return */
+);
+
+extern Status Xutf8TextPerCharExtents(
+    XFontSet		/* font_set */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */,
+    XRectangle*		/* ink_extents_buffer */,
+    XRectangle*		/* logical_extents_buffer */,
+    int			/* buffer_size */,
+    int*		/* num_chars */,
+    XRectangle*		/* overall_ink_return */,
+    XRectangle*		/* overall_logical_return */
+);
+
+extern void XmbDrawText(
+    Display*		/* display */,
+    Drawable		/* d */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    XmbTextItem*	/* text_items */,
+    int			/* nitems */
+);
+
+extern void XwcDrawText(
+    Display*		/* display */,
+    Drawable		/* d */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    XwcTextItem*	/* text_items */,
+    int			/* nitems */
+);
+
+extern void Xutf8DrawText(
+    Display*		/* display */,
+    Drawable		/* d */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    XmbTextItem*	/* text_items */,
+    int			/* nitems */
+);
+
+extern void XmbDrawString(
+    Display*		/* display */,
+    Drawable		/* d */,
+    XFontSet		/* font_set */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */
+);
+
+extern void XwcDrawString(
+    Display*		/* display */,
+    Drawable		/* d */,
+    XFontSet		/* font_set */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    _Xconst wchar_t*	/* text */,
+    int			/* num_wchars */
+);
+
+extern void Xutf8DrawString(
+    Display*		/* display */,
+    Drawable		/* d */,
+    XFontSet		/* font_set */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */
+);
+
+extern void XmbDrawImageString(
+    Display*		/* display */,
+    Drawable		/* d */,
+    XFontSet		/* font_set */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */
+);
+
+extern void XwcDrawImageString(
+    Display*		/* display */,
+    Drawable		/* d */,
+    XFontSet		/* font_set */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    _Xconst wchar_t*	/* text */,
+    int			/* num_wchars */
+);
+
+extern void Xutf8DrawImageString(
+    Display*		/* display */,
+    Drawable		/* d */,
+    XFontSet		/* font_set */,
+    GC			/* gc */,
+    int			/* x */,
+    int			/* y */,
+    _Xconst char*	/* text */,
+    int			/* bytes_text */
+);
+
+extern XIM XOpenIM(
+    Display*			/* dpy */,
+    struct _XrmHashBucketRec*	/* rdb */,
+    char*			/* res_name */,
+    char*			/* res_class */
+);
+
+extern Status XCloseIM(
+    XIM /* im */
+);
+
+extern char *XGetIMValues(
+    XIM /* im */, ...
+) _X_SENTINEL(0);
+
+extern char *XSetIMValues(
+    XIM /* im */, ...
+) _X_SENTINEL(0);
+
+extern Display *XDisplayOfIM(
+    XIM /* im */
+);
+
+extern char *XLocaleOfIM(
+    XIM /* im*/
+);
+
+extern XIC XCreateIC(
+    XIM /* im */, ...
+) _X_SENTINEL(0);
+
+extern void XDestroyIC(
+    XIC /* ic */
+);
+
+extern void XSetICFocus(
+    XIC /* ic */
+);
+
+extern void XUnsetICFocus(
+    XIC /* ic */
+);
+
+extern wchar_t *XwcResetIC(
+    XIC /* ic */
+);
+
+extern char *XmbResetIC(
+    XIC /* ic */
+);
+
+extern char *Xutf8ResetIC(
+    XIC /* ic */
+);
+
+extern char *XSetICValues(
+    XIC /* ic */, ...
+) _X_SENTINEL(0);
+
+extern char *XGetICValues(
+    XIC /* ic */, ...
+) _X_SENTINEL(0);
+
+extern XIM XIMOfIC(
+    XIC /* ic */
+);
+
+extern Bool XFilterEvent(
+    XEvent*	/* event */,
+    Window	/* window */
+);
+
+extern int XmbLookupString(
+    XIC			/* ic */,
+    XKeyPressedEvent*	/* event */,
+    char*		/* buffer_return */,
+    int			/* bytes_buffer */,
+    KeySym*		/* keysym_return */,
+    Status*		/* status_return */
+);
+
+extern int XwcLookupString(
+    XIC			/* ic */,
+    XKeyPressedEvent*	/* event */,
+    wchar_t*		/* buffer_return */,
+    int			/* wchars_buffer */,
+    KeySym*		/* keysym_return */,
+    Status*		/* status_return */
+);
+
+extern int Xutf8LookupString(
+    XIC			/* ic */,
+    XKeyPressedEvent*	/* event */,
+    char*		/* buffer_return */,
+    int			/* bytes_buffer */,
+    KeySym*		/* keysym_return */,
+    Status*		/* status_return */
+);
+
+extern XVaNestedList XVaCreateNestedList(
+    int /*unused*/, ...
+) _X_SENTINEL(0);
+
+/* internal connections for IMs */
+
+extern Bool XRegisterIMInstantiateCallback(
+    Display*			/* dpy */,
+    struct _XrmHashBucketRec*	/* rdb */,
+    char*			/* res_name */,
+    char*			/* res_class */,
+    XIDProc			/* callback */,
+    XPointer			/* client_data */
+);
+
+extern Bool XUnregisterIMInstantiateCallback(
+    Display*			/* dpy */,
+    struct _XrmHashBucketRec*	/* rdb */,
+    char*			/* res_name */,
+    char*			/* res_class */,
+    XIDProc			/* callback */,
+    XPointer			/* client_data */
+);
+
+typedef void (*XConnectionWatchProc)(
+    Display*			/* dpy */,
+    XPointer			/* client_data */,
+    int				/* fd */,
+    Bool			/* opening */,	 /* open or close flag */
+    XPointer*			/* watch_data */ /* open sets, close uses */
+);
+
+
+extern Status XInternalConnectionNumbers(
+    Display*			/* dpy */,
+    int**			/* fd_return */,
+    int*			/* count_return */
+);
+
+extern void XProcessInternalConnection(
+    Display*			/* dpy */,
+    int				/* fd */
+);
+
+extern Status XAddConnectionWatch(
+    Display*			/* dpy */,
+    XConnectionWatchProc	/* callback */,
+    XPointer			/* client_data */
+);
+
+extern void XRemoveConnectionWatch(
+    Display*			/* dpy */,
+    XConnectionWatchProc	/* callback */,
+    XPointer			/* client_data */
+);
+
+extern void XSetAuthorization(
+    char *			/* name */,
+    int				/* namelen */,
+    char *			/* data */,
+    int				/* datalen */
+);
+
+extern int _Xmbtowc(
+    wchar_t *			/* wstr */,
+    char *			/* str */,
+    int				/* len */
+);
+
+extern int _Xwctomb(
+    char *			/* str */,
+    wchar_t			/* wc */
+);
+
+extern Bool XGetEventData(
+    Display*			/* dpy */,
+    XGenericEventCookie*	/* cookie*/
+);
+
+extern void XFreeEventData(
+    Display*			/* dpy */,
+    XGenericEventCookie*	/* cookie*/
+);
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
+_XFUNCPROTOEND
+
+#endif /* _X11_XLIB_H_ */
