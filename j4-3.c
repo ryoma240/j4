@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+
+#define BSIZE 500
+char buf[BSIZE];
+
+
+
 main(int argc, char **argv){
 
   int pid1, pid2, p_fd[2], i, fb;
@@ -21,33 +27,37 @@ main(int argc, char **argv){
 
   char *fn;
   fn = argv[1];
-  if((fb = open(fn, O_WRONLY|O_CREAT|O_TRUNC, 0644)) <0){
+if((fb = open(fn, O_WRONLY|O_CREAT|O_TRUNC, 0644)) <0){
     perror(fn);
     exit(1);
   }
 
-
-
   pipe(p_fd);
   if((pid1 = fork()) == 0){
     //child process
+    if((pid2 = fork()) == 0){
+      close(p_fd[0]);
+      close(1);
+      dup(p_fd[1]);
+      close(p_fd[1]);
+   
+      execvp(new_program, new_argv);
+      perror(new_program);
+      exit(0);
+    }
 
-
-    close(1);
-    close(p_fd[1]);
-    dup(fb);
-    close(fb);
-    dup(p_fd[1]);
-    close(p_fd[1]);
-    //copy 
-    execvp(new_program, new_argv);
-    perror(new_program);
-    exit(1);
-  }
-  //parent process
-  if(pid1 == -1){
-    perror("fork");
-    exit(1);
+    //parent process
+    if(pid2 == -1){
+      perror("fork");
+      exit(1);
+    }
+      close(1);
+      dup(fb);
+      close(fb);
+   
+      execvp(new_program, new_argv);
+      perror(new_program);
+      exit(0);
   }
 
   close(p_fd[1]);
@@ -58,5 +68,6 @@ main(int argc, char **argv){
 
   execvp(new_program, new_argv);
   perror(new_program);
-  exit(1);
+  exit(0);
+
 }
