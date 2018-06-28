@@ -1,0 +1,13 @@
+This is TeX, Version 3.1415926 (TeX Live 2013) (format=tex 2018.2.16)  28 JUN 2018 15:30
+**report.tex
+(./report.tex
+! Undefined control sequence.
+l.1 \documentclass
+                  [12pt, a4paper, titlepage]{jsarticle}
+? 
+! Emergency stop.
+l.1 \documentclass
+                  [12pt, a4paper, titlepage]{jsarticle}
+End of file on the terminal!
+
+No pages of output.

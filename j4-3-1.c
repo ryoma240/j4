@@ -72,5 +72,5 @@ main(int argc, char **argv){
 
   execvp(new_program, new_argv);
   perror(new_program);
-  exit(1);
+  exit(0);
 }
